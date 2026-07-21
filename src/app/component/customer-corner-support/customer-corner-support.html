@@ -1,0 +1,318 @@
+<section class="animated-support-bg py-16 lg:py-24 text-slate-800 relative overflow-hidden">
+
+  <!-- Tricolor Accent Top Stripe -->
+  <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-amber-500 via-white to-emerald-600 z-20"></div>
+
+  <!-- Ambient Blurred Glowing Orbs -->
+  <div class="absolute -top-32 -right-32 w-96 h-96 bg-blue-200/30 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute bottom-10 -left-32 w-96 h-96 bg-emerald-200/30 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+    <!-- Section Header -->
+    <div class="animate-fade-in-up text-center max-w-3xl mx-auto mb-12 lg:mb-16">
+      <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-blue-100/90 text-blue-900 border border-blue-200 shadow-sm mb-4">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+        <span class="text-xs font-extrabold tracking-wide uppercase">{{ t().SECTION_TAG }}</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-blue-950 tracking-tight mb-4">
+        {{ t().SECTION_TITLE }}
+      </h2>
+      <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+        {{ t().SECTION_SUBTITLE }}
+      </p>
+    </div>
+
+    <!-- ==================================================== -->
+    <!-- QUICK CONTACT CHANNELS (GRID) -->
+    <!-- ==================================================== -->
+    <div class="animate-fade-in-up delay-100 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-16">
+
+      <!-- Toll Free Card -->
+      <a
+        href="tel:1800123456"
+        class="group bg-white/90 backdrop-blur-md rounded-2xl p-5 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-blue-400 transition-all duration-300 transform hover:-translate-y-1.5 focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-500">
+        <div class="flex items-center space-x-4">
+          <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-900 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:bg-blue-900 group-hover:text-white transition-all">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+            </svg>
+          </div>
+          <div>
+            <span class="text-[10px] font-black uppercase text-blue-800 tracking-wider block">{{ t().TOLL_FREE }}</span>
+            <div class="text-lg font-black text-slate-900 group-hover:text-blue-900">1800-123-456</div>
+            <p class="text-[11px] text-slate-500 mt-0.5">{{ t().TOLL_FREE_SUB }}</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- WhatsApp Card -->
+      <a
+        href="https://wa.me/919876543210"
+        target="_blank"
+        class="group bg-white/90 backdrop-blur-md rounded-2xl p-5 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-emerald-400 transition-all duration-300 transform hover:-translate-y-1.5 focus:outline-none focus-visible:ring-4 focus-visible:ring-emerald-500">
+        <div class="flex items-center space-x-4">
+          <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:bg-emerald-600 group-hover:text-white transition-all">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"></path>
+            </svg>
+          </div>
+          <div>
+            <span class="text-[10px] font-black uppercase text-emerald-800 tracking-wider block">{{ t().WHATSAPP }}</span>
+            <div class="text-lg font-black text-slate-900 group-hover:text-emerald-700">+91 98765 43210</div>
+            <p class="text-[11px] text-slate-500 mt-0.5">{{ t().WHATSAPP_SUB }}</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Cyber Helpline Card -->
+      <a
+        href="tel:1930"
+        class="group bg-white/90 backdrop-blur-md rounded-2xl p-5 border border-rose-200/90 shadow-sm hover:shadow-xl hover:border-rose-500 transition-all duration-300 transform hover:-translate-y-1.5 focus:outline-none focus-visible:ring-4 focus-visible:ring-rose-500">
+        <div class="flex items-center space-x-4">
+          <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-800 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:bg-rose-600 group-hover:text-white transition-all">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+            </svg>
+          </div>
+          <div>
+            <span class="text-[10px] font-black uppercase text-rose-700 tracking-wider block">{{ t().CYBER_HEPLINE }}</span>
+            <div class="text-lg font-black text-rose-900">Dial 1930</div>
+            <p class="text-[11px] text-slate-500 mt-0.5">{{ t().CYBER_SUB }}</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Email Support Card -->
+      <a
+        href="mailto:customercare@bank.com"
+        class="group bg-white/90 backdrop-blur-md rounded-2xl p-5 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-blue-400 transition-all duration-300 transform hover:-translate-y-1.5 focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-500">
+        <div class="flex items-center space-x-4">
+          <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-900 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:bg-purple-900 group-hover:text-white transition-all">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <div>
+            <span class="text-[10px] font-black uppercase text-purple-800 tracking-wider block">{{ t().EMAIL_SUPPORT }}</span>
+            <div class="text-sm font-black text-slate-900 group-hover:text-purple-900 truncate max-w-[140px] sm:max-w-none">customercare&#64;bank.com</div>
+            <p class="text-[11px] text-slate-500 mt-0.5">{{ t().EMAIL_SUB }}</p>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- ==================================================== -->
+    <!-- MODERN MULTI-ITEM RESPONSIVE CAROUSEL -->
+    <!-- ==================================================== -->
+    <div class="animate-fade-in-up delay-200 mb-20">
+
+      <!-- Carousel Header Controls -->
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
+        <div>
+          <h3 class="text-2xl sm:text-3xl font-black text-blue-950 tracking-tight">
+            {{ t().CAROUSEL_TITLE }}
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 mt-1">
+            {{ t().CAROUSEL_SUBTITLE }}
+          </p>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="flex items-center space-x-3 self-end sm:self-auto">
+          <button
+            type="button"
+            (click)="prevSlide()"
+            [attr.aria-label]="t().CAROUSEL_PREV"
+            class="w-11 h-11 rounded-xl bg-white border border-slate-200 shadow-sm text-slate-700 hover:bg-blue-950 hover:text-white transition-all flex items-center justify-center focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-600 active:scale-95">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path>
+            </svg>
+          </button>
+
+          <button
+            type="button"
+            (click)="nextSlide()"
+            [attr.aria-label]="t().CAROUSEL_NEXT"
+            class="w-11 h-11 rounded-xl bg-white border border-slate-200 shadow-sm text-slate-700 hover:bg-blue-950 hover:text-white transition-all flex items-center justify-center focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-600 active:scale-95">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Carousel Track Container -->
+      <div
+        class="overflow-hidden rounded-2xl p-1"
+        (mouseenter)="stopAutoPlay()"
+        (mouseleave)="startAutoPlay()"
+        (touchstart)="onTouchStart($event)"
+        (touchend)="onTouchEnd($event)">
+
+        <div
+          class="flex transition-transform duration-500 ease-out"
+          [style.transform]="carouselTransform()">
+
+          @for (service of t().SERVICES; track service.id) {
+            <div
+              class="px-2.5 sm:px-3 flex-shrink-0"
+              [style.width.%]="100 / visibleCardsCount()">
+
+              <div class="h-full bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-2xl hover:border-blue-300 transition-all duration-300 flex flex-col justify-between group">
+
+                <div>
+                  <!-- Card Image Box -->
+                  <div class="relative h-44 w-full overflow-hidden bg-slate-100">
+                    <img
+                      [src]="service.image"
+                      [alt]="service.title"
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                      loading="lazy" />
+
+                    <div class="absolute inset-0 bg-gradient-to-t from-blue-950/70 via-transparent to-transparent"></div>
+
+                    <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-[11px] font-extrabold border backdrop-blur-md shadow-sm {{ service.tagColor }}">
+                      {{ service.tag }}
+                    </span>
+                  </div>
+
+                  <!-- Card Body -->
+                  <div class="p-5 sm:p-6">
+                    <span class="text-[11px] font-extrabold text-blue-800 uppercase tracking-wider block mb-1">
+                      {{ service.category }}
+                    </span>
+                    <h4 class="text-base sm:text-lg font-extrabold text-blue-950 mb-2 leading-snug group-hover:text-blue-900 transition-colors">
+                      {{ service.title }}
+                    </h4>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                      {{ service.description }}
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Card Footer Action -->
+                <div class="px-5 pb-5 pt-0 sm:px-6 sm:pb-6">
+                  <button
+                    type="button"
+                    class="w-full py-2.5 px-4 rounded-xl bg-blue-50 group-hover:bg-blue-950 text-blue-950 group-hover:text-white font-bold text-xs sm:text-sm transition-all duration-300 flex items-center justify-center space-x-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600">
+                    <span>{{ service.linkText }}</span>
+                    <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                  </button>
+                </div>
+
+              </div>
+
+            </div>
+          }
+
+        </div>
+      </div>
+
+      <!-- Carousel Pagination Dots -->
+      <div class="flex items-center justify-center space-x-2 mt-6">
+        @for (dot of [].constructor(maxCarouselIndex() + 1); track $index) {
+          <button
+            type="button"
+            (click)="goToSlide($index)"
+            [class.w-8]="carouselIndex() === $index"
+            [class.bg-blue-950]="carouselIndex() === $index"
+            [class.w-2.5]="carouselIndex() !== $index"
+            [class.bg-slate-300]="carouselIndex() !== $index"
+            class="h-2.5 rounded-full transition-all duration-300 focus:outline-none"
+            [attr.aria-label]="'Go to slide ' + ($index + 1)">
+          </button>
+        }
+      </div>
+
+    </div>
+
+    <!-- ==================================================== -->
+    <!-- 3-TIER GRIEVANCE ESCALATION MATRIX -->
+    <!-- ==================================================== -->
+    <div class="animate-fade-in-up delay-300 mb-20 bg-white/80 backdrop-blur-md rounded-3xl p-6 sm:p-10 border border-slate-200/80 shadow-md relative">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="text-xs font-black uppercase text-emerald-600 tracking-wider block mb-1">{{ t().GRIEVANCE_TAG }}</span>
+        <h3 class="text-2xl sm:text-3xl font-black text-blue-950">{{ t().GRIEVANCE_TITLE }}</h3>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
+
+        <!-- Level 1 -->
+        <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 hover:border-blue-300 transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-full bg-blue-950 text-white font-black text-sm flex items-center justify-center mb-4">L1</div>
+            <h4 class="text-base font-extrabold text-blue-950 mb-2">{{ t().STEP_1_TITLE }}</h4>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">{{ t().STEP_1_DESC }}</p>
+          </div>
+          <span class="inline-block px-3 py-1 rounded-lg bg-blue-100 text-blue-900 text-xs font-bold self-start">
+            {{ t().STEP_1_TAT }}
+          </span>
+        </div>
+
+        <!-- Level 2 -->
+        <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 hover:border-blue-300 transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-full bg-amber-600 text-white font-black text-sm flex items-center justify-center mb-4">L2</div>
+            <h4 class="text-base font-extrabold text-blue-950 mb-2">{{ t().STEP_2_TITLE }}</h4>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">{{ t().STEP_2_DESC }}</p>
+          </div>
+          <span class="inline-block px-3 py-1 rounded-lg bg-amber-100 text-amber-900 text-xs font-bold self-start">
+            {{ t().STEP_2_TAT }}
+          </span>
+        </div>
+
+        <!-- Level 3 -->
+        <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 hover:border-blue-300 transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-full bg-emerald-700 text-white font-black text-sm flex items-center justify-center mb-4">L3</div>
+            <h4 class="text-base font-extrabold text-blue-950 mb-2">{{ t().STEP_3_TITLE }}</h4>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">{{ t().STEP_3_DESC }}</p>
+          </div>
+          <span class="inline-block px-3 py-1 rounded-lg bg-emerald-100 text-emerald-900 text-xs font-bold self-start">
+            {{ t().STEP_3_TAT }}
+          </span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ==================================================== -->
+    <!-- FAQ ACCORDION SECTION -->
+    <!-- ==================================================== -->
+    <div class="animate-fade-in-up delay-400 max-w-4xl mx-auto">
+      <div class="text-center mb-10">
+        <h3 class="text-2xl sm:text-3xl font-black text-blue-950 mb-2">{{ t().FAQ_TITLE }}</h3>
+        <p class="text-xs sm:text-sm text-slate-600">{{ t().FAQ_SUBTITLE }}</p>
+      </div>
+
+      <div class="space-y-4">
+        @for (faq of t().FAQS; track $index) {
+          <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition-all duration-300">
+            <button
+              type="button"
+              (click)="toggleFaq($index)"
+              class="w-full px-6 py-4 sm:py-5 text-left flex justify-between items-center space-x-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600">
+              <span class="text-sm sm:text-base font-bold text-blue-950">{{ faq.question }}</span>
+              <span class="w-8 h-8 rounded-full bg-slate-100 text-slate-700 flex items-center justify-center flex-shrink-0 transition-transform duration-300" [class.rotate-180]="activeFaqIndex() === $index">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </span>
+            </button>
+
+            @if (activeFaqIndex() === $index) {
+              <div class="px-6 pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3 animate-fade-in-up">
+                {{ faq.answer }}
+              </div>
+            }
+          </div>
+        }
+      </div>
+    </div>
+
+  </div>
+</section>

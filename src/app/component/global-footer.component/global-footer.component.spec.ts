@@ -1,0 +1,22 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { GlobalFooterComponent } from './global-footer.component';
+
+describe('GlobalFooterComponent', () => {
+  let component: GlobalFooterComponent;
+  let fixture: ComponentFixture<GlobalFooterComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [GlobalFooterComponent],
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(GlobalFooterComponent);
+    component = fixture.componentInstance;
+    await fixture.whenStable();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

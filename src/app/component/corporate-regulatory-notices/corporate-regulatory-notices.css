@@ -1,0 +1,9 @@
+/* Custom radial gradient utility for dark background depth */
+.bg-radial-at-c {
+  background-image: radial-gradient(circle at center, var(--tw-gradient-stops));
+}
+
+/* Glassmorphism subtle glow hover effect */
+.group:hover {
+  box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.9), 0 0 20px 0 rgba(37, 99, 235, 0.15);
+}

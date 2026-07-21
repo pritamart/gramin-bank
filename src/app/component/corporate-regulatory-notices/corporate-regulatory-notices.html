@@ -1,0 +1,188 @@
+<section class="relative bg-slate-950 text-slate-100 py-16 sm:py-24 overflow-hidden border-t border-slate-800">
+
+  <!-- BACKGROUND IMAGE LAYER WITH DARK GRADIENT OVERLAY -->
+  <div class="absolute inset-0 z-0">
+    <img
+      src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000"
+      alt="Corporate Architecture Background"
+      class="w-full h-full object-cover opacity-20 filter contrast-125 brightness-75 scale-105 transform transition-transform duration-1000" />
+
+    <!-- Dark Gradient Overlays for high contrast -->
+    <div class="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-950/90 to-slate-950"></div>
+    <div class="absolute inset-0 bg-radial-at-c from-transparent via-slate-950/70 to-slate-950"></div>
+  </div>
+
+  <!-- AMBIENT GLOW ORBS -->
+  <div class="absolute top-1/4 -right-32 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute bottom-10 -left-32 w-96 h-96 bg-emerald-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+    <!-- SECTION HEADER -->
+    <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+      <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-blue-950/80 text-blue-400 border border-blue-800/80 backdrop-blur-md shadow-lg mb-4">
+        <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+        <span class="text-xs font-extrabold uppercase tracking-widest">{{ t().SECTION_TAG }}</span>
+      </div>
+
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight mb-4 leading-tight">
+        {{ t().SECTION_TITLE }}
+      </h2>
+
+      <p class="text-sm sm:text-base text-slate-400 leading-relaxed">
+        {{ t().SECTION_SUBTITLE }}
+      </p>
+    </div>
+
+    <!-- CATEGORY FILTER TABS -->
+    <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-12">
+
+      <button
+        type="button"
+        (click)="setCategory('all')"
+        [class.bg-blue-600]="selectedCategory() === 'all'"
+        [class.text-white]="selectedCategory() === 'all'"
+        [class.shadow-blue-600\/30]="selectedCategory() === 'all'"
+        [class.bg-slate-900\/90]="selectedCategory() !== 'all'"
+        [class.text-slate-300]="selectedCategory() !== 'all'"
+        [class.hover:bg-slate-800]="selectedCategory() !== 'all'"
+        class="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold border border-slate-800 backdrop-blur-md transition-all duration-300 shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
+        {{ t().TAB_ALL }}
+      </button>
+
+      <button
+        type="button"
+        (click)="setCategory('financials')"
+        [class.bg-blue-600]="selectedCategory() === 'financials'"
+        [class.text-white]="selectedCategory() === 'financials'"
+        [class.shadow-blue-600\/30]="selectedCategory() === 'financials'"
+        [class.bg-slate-900\/90]="selectedCategory() !== 'financials'"
+        [class.text-slate-300]="selectedCategory() !== 'financials'"
+        [class.hover:bg-slate-800]="selectedCategory() !== 'financials'"
+        class="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold border border-slate-800 backdrop-blur-md transition-all duration-300 shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
+        {{ t().TAB_FINANCIALS }}
+      </button>
+
+      <button
+        type="button"
+        (click)="setCategory('disclosures')"
+        [class.bg-blue-600]="selectedCategory() === 'disclosures'"
+        [class.text-white]="selectedCategory() === 'disclosures'"
+        [class.shadow-blue-600\/30]="selectedCategory() === 'disclosures'"
+        [class.bg-slate-900\/90]="selectedCategory() !== 'disclosures'"
+        [class.text-slate-300]="selectedCategory() !== 'disclosures'"
+        [class.hover:bg-slate-800]="selectedCategory() !== 'disclosures'"
+        class="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold border border-slate-800 backdrop-blur-md transition-all duration-300 shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
+        {{ t().TAB_DISCLOSURES }}
+      </button>
+
+      <button
+        type="button"
+        (click)="setCategory('tenders')"
+        [class.bg-blue-600]="selectedCategory() === 'tenders'"
+        [class.text-white]="selectedCategory() === 'tenders'"
+        [class.shadow-blue-600\/30]="selectedCategory() === 'tenders'"
+        [class.bg-slate-900\/90]="selectedCategory() !== 'tenders'"
+        [class.text-slate-300]="selectedCategory() !== 'tenders'"
+        [class.hover:bg-slate-800]="selectedCategory() !== 'tenders'"
+        class="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold border border-slate-800 backdrop-blur-md transition-all duration-300 shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
+        {{ t().TAB_TENDERS }}
+      </button>
+
+      <button
+        type="button"
+        (click)="setCategory('governance')"
+        [class.bg-blue-600]="selectedCategory() === 'governance'"
+        [class.text-white]="selectedCategory() === 'governance'"
+        [class.shadow-blue-600\/30]="selectedCategory() === 'governance'"
+        [class.bg-slate-900\/90]="selectedCategory() !== 'governance'"
+        [class.text-slate-300]="selectedCategory() !== 'governance'"
+        [class.hover:bg-slate-800]="selectedCategory() !== 'governance'"
+        class="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold border border-slate-800 backdrop-blur-md transition-all duration-300 shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
+        {{ t().TAB_GOVERNANCE }}
+      </button>
+
+    </div>
+
+    <!-- NOTICES GRID LIST (WHITE CARDS) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+
+      @for (notice of filteredNotices(); track notice.id) {
+        <div class="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-xl hover:shadow-2xl hover:border-blue-400 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden transform hover:-translate-y-1">
+
+          <!-- Top Accent Stripe for Important Notices -->
+          @if (notice.isImportant) {
+            <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-amber-500 to-rose-500"></div>
+          }
+
+          <div>
+            <!-- Category Tag & Ref Number -->
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="px-2.5 py-1 rounded-md text-[10px] font-black uppercase tracking-wider bg-slate-100 text-blue-900 border border-slate-200">
+                {{ notice.categoryLabel }}
+              </span>
+
+              @if (notice.isImportant) {
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-900 border border-amber-300">
+                  {{ t().IMPORTANT_BADGE }}
+                </span>
+              }
+            </div>
+
+            <!-- Title -->
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-900 transition-colors mb-2 leading-snug">
+              {{ notice.title }}
+            </h3>
+
+            <!-- Summary -->
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
+              {{ notice.summary }}
+            </p>
+          </div>
+
+          <!-- Notice Metadata & Download CTA -->
+          <div class="pt-4 border-t border-slate-100">
+            <div class="flex items-center justify-between text-[11px] text-slate-500 mb-4">
+              <span class="font-mono text-slate-700 font-bold">{{ t().REF_NO }} {{ notice.refNo }}</span>
+              <span class="font-medium">{{ notice.publishDate }}</span>
+            </div>
+
+            <button
+              type="button"
+              (click)="downloadNotice(notice)"
+              class="w-full py-2.5 px-4 rounded-xl bg-slate-100 hover:bg-blue-950 text-slate-800 hover:text-white text-xs font-extrabold transition-all duration-300 flex items-center justify-center space-x-2 border border-slate-200 hover:border-blue-950 group/btn focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600">
+
+              <svg class="w-4 h-4 text-rose-600 group-hover/btn:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+              </svg>
+
+              <span>{{ t().DOWNLOAD_PDF }}</span>
+              <span class="text-[10px] opacity-70 font-normal">({{ notice.fileSize }})</span>
+            </button>
+          </div>
+
+        </div>
+      }
+
+    </div>
+
+    <!-- INVESTOR RELATIONS SUPPORT BANNER -->
+    <div class="bg-gradient-to-r from-slate-900 via-blue-950/80 to-slate-900 rounded-3xl p-6 sm:p-10 border border-slate-800 backdrop-blur-md flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
+      <div class="text-center md:text-left">
+        <h4 class="text-xl sm:text-2xl font-black text-white mb-2">
+          {{ t().INVESTOR_DESK_TITLE }}
+        </h4>
+        <p class="text-xs sm:text-sm text-slate-400 max-w-2xl">
+          {{ t().INVESTOR_DESK_SUB }}
+        </p>
+      </div>
+
+      <button
+        type="button"
+        class="whitespace-nowrap px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-extrabold text-xs sm:text-sm transition-all shadow-lg shadow-blue-600/30 hover:shadow-blue-600/50 focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-400">
+        {{ t().CONTACT_IR_BTN }}
+      </button>
+    </div>
+
+  </div>
+</section>

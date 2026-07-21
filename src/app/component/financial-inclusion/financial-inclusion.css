@@ -1,0 +1,104 @@
+/* Custom Focus Pulse Keyframes for Keyboard & Mouse Focus */
+@keyframes focusRingPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(30, 58, 138, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(30, 58, 138, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(30, 58, 138, 0);
+  }
+}
+
+@keyframes modalBorderGlow {
+  0%, 100% {
+    border-color: rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    border-color: rgba(59, 130, 246, 0.8);
+  }
+}
+
+/* Custom Interactive Focus Classes */
+.animated-focus {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animated-focus:focus-visible {
+  outline: none !important;
+  animation: focusRingPulse 1.2s infinite;
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* Card Focus State Enhancement */
+.card-focusable:focus-within,
+.card-focusable:focus-visible {
+  outline: none;
+  border-color: #2563eb !important;
+  box-shadow: 0 20px 25px -5px rgba(30, 58, 138, 0.15), 0 0 0 4px rgba(59, 130, 246, 0.3);
+  transform: translateY(-4px) scale(1.01);
+}
+
+/* Existing Entrance Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes modalScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-modal {
+  animation: modalScale 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards, modalBorderGlow 3s infinite;
+}
+
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+
+/* Animated Gradient Background Keyframes */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Fluid Moving Gradient Background */
+.animated-gradient-bg {
+  background: linear-gradient(
+    -45deg,
+    #f8fafc, /* Slate 50 */
+    #eff6ff, /* Soft Blue */
+    #e0f2fe, /* Sky Blue */
+    #f0fdf4, /* Soft Mint Emerald */
+    #fff7ed  /* Soft Warm Amber */
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 16s ease infinite;
+}
