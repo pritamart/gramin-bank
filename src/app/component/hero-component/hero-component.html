@@ -1,0 +1,88 @@
+<!-- Hero Container -->
+<section class="relative bg-blue-950 text-white overflow-hidden min-h-[520px] lg:min-h-[600px] flex items-center">
+
+  <!-- Right Side Background Banner Image with Fade-In -->
+  <div class="absolute inset-0 w-full h-full animate-fade-in">
+    <img
+      src="assets/images/women_group.png"
+      alt="Gramin Bank Banner"
+      class="w-full h-full object-cover object-right transform scale-105 transition-transform duration-1000 ease-out"
+    />
+    <!-- Gradient Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-r from-blue-950 via-blue-950/90 sm:via-blue-900/80 to-transparent"></div>
+  </div>
+
+  <!-- Hero Content Layer -->
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 w-full z-10">
+    <div class="max-w-2xl">
+
+      <!-- 1. Welcome Tag (Delay 100ms) -->
+      <div class="animate-fade-in-up delay-100 inline-flex items-center space-x-2 bg-blue-900/80 border border-blue-700/60 rounded-full px-3.5 py-1 text-xs font-semibold text-blue-100 mb-6 backdrop-blur-md shadow-sm">
+        <span class="flex h-2 w-2 rounded-full bg-sky-400 animate-pulse"></span>
+        <span>{{ t().TAG }}</span>
+      </div>
+
+      <!-- 2. Hero Heading (Delay 200ms) -->
+      <h1 class="animate-fade-in-up delay-200 text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight mb-4 text-white">
+        {{ t().TITLE_1 }} <br />
+        <span class="text-sky-300">
+          {{ t().TITLE_HIGHLIGHT }}
+        </span>
+      </h1>
+
+      <!-- 3. Hero Subtitle (Delay 300ms) -->
+      <p class="animate-fade-in-up delay-300 text-sm sm:text-base lg:text-lg text-blue-100/90 leading-relaxed mb-8 max-w-xl">
+        {{ t().SUBTITLE }}
+      </p>
+
+      <!-- 4. Action Buttons with Hover Lift (Delay 400ms) -->
+      <div class="animate-fade-in-up delay-400 flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 mb-12">
+
+        <!-- Primary White Button with Hover Lift -->
+        <button
+          type="button"
+          class="bg-white hover:bg-blue-50 text-blue-950 px-6 py-3.5 rounded-xl font-bold text-sm sm:text-base transition-all duration-200 transform hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-900/40 active:translate-y-0 active:scale-95 text-center">
+          {{ t().PRIMARY_CTA }}
+        </button>
+
+        <!-- Secondary Outline Button with Glow -->
+        <button
+          type="button"
+          class="bg-blue-900/60 hover:bg-blue-800/80 text-white border border-blue-600/80 hover:border-sky-400/80 px-6 py-3.5 rounded-xl font-semibold text-sm sm:text-base transition-all duration-200 transform hover:-translate-y-1 backdrop-blur-sm active:translate-y-0 active:scale-95 text-center">
+          {{ t().SECONDARY_CTA }}
+        </button>
+      </div>
+
+      <!-- 5. Quick Stats Counter Cards (Delay 500ms) -->
+     <!-- Quick Stats Counter with Count-Up Animation -->
+      <div class="animate-fade-in-up delay-500 grid grid-cols-3 gap-4 pt-6 border-t border-blue-800/80 max-w-lg">
+
+        <!-- Stat 1: 0 -> 10M+ -->
+        <div class="p-2 rounded-lg transition-colors hover:bg-blue-900/40">
+          <p class="text-xl sm:text-2xl font-extrabold text-white">
+            {{ stat1() }}M+
+          </p>
+          <p class="text-[11px] sm:text-xs text-blue-200 mt-0.5">{{ t().STAT_1_LABEL }}</p>
+        </div>
+
+        <!-- Stat 2: 0 -> 5,000+ -->
+        <div class="p-2 rounded-lg transition-colors hover:bg-blue-900/40">
+          <p class="text-xl sm:text-2xl font-extrabold text-white">
+            {{ stat2().toLocaleString() }}+
+          </p>
+          <p class="text-[11px] sm:text-xs text-blue-200 mt-0.5">{{ t().STAT_2_LABEL }}</p>
+        </div>
+
+        <!-- Stat 3: 0.0 -> 99.9% -->
+        <div class="p-2 rounded-lg transition-colors hover:bg-blue-900/40">
+          <p class="text-xl sm:text-2xl font-extrabold text-white">
+            {{ stat3().toFixed(1) }}%
+          </p>
+          <p class="text-[11px] sm:text-xs text-blue-200 mt-0.5">{{ t().STAT_3_LABEL }}</p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>

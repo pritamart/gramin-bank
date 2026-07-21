@@ -1,0 +1,197 @@
+<!-- Fixed Header Wrapper -->
+<header class="fixed top-0 left-0 w-full z-50 shadow-lg font-sans">
+
+  <!-- 1. Top Utility Bar (Dark Navy Blue) -->
+  <div class="bg-blue-950 text-gray-200 py-1.5 px-4 md:px-8 text-xs hidden sm:flex justify-between items-center border-b border-blue-900">
+
+    <!-- Accessibility Options -->
+    <div class="flex items-center space-x-4">
+      <a href="#main-content" class="hover:text-sky-300 transition-colors">
+        {{ t().SKIP_CONTENT }}
+      </a>
+      <span class="text-blue-800">|</span>
+
+      <!-- Text Size Resizer -->
+      <div class="flex items-center space-x-1 bg-blue-900/80 p-0.5 rounded border border-blue-800">
+        <span class="text-[10px] text-blue-300 mr-1 pl-1">{{ t().TEXT_SIZE }}</span>
+        <button
+          type="button"
+          (click)="setFontSize('decrease')"
+          [class.bg-white]="fontScale() < 100"
+          [class.text-blue-950]="fontScale() < 100"
+          class="px-1.5 py-0.5 rounded text-[11px] font-bold hover:bg-blue-800 transition-colors">
+          A-
+        </button>
+        <button
+          type="button"
+          (click)="setFontSize('reset')"
+          [class.bg-white]="fontScale() === 100"
+          [class.text-blue-950]="fontScale() === 100"
+          class="px-1.5 py-0.5 rounded text-[11px] font-bold hover:bg-blue-800 transition-colors">
+          A
+        </button>
+        <button
+          type="button"
+          (click)="setFontSize('increase')"
+          [class.bg-white]="fontScale() > 100"
+          [class.text-blue-950]="fontScale() > 100"
+          class="px-1.5 py-0.5 rounded text-[11px] font-bold hover:bg-blue-800 transition-colors">
+          A+
+        </button>
+      </div>
+    </div>
+
+    <!-- Right Utilities: Language Switcher -->
+    <div class="flex items-center space-x-5">
+      <div class="relative">
+        <button
+          type="button"
+          (click)="toggleLangDropdown()"
+          class="flex items-center space-x-1.5 hover:text-sky-300 transition-colors focus:outline-none">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+          </svg>
+          <span class="font-semibold uppercase">
+            @if (currentLang() === 'en') { English }
+            @else if (currentLang() === 'hi') { हिंदी }
+            @else { বাংলা }
+          </span>
+          <svg class="w-3 h-3 transition-transform" [class.rotate-180]="isLangDropdownOpen()" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+
+        <!-- Dropdown Menu -->
+        @if (isLangDropdownOpen()) {
+          <div class="absolute right-0 mt-2 w-32 bg-blue-900 border border-blue-700 rounded-lg shadow-xl py-1 z-50">
+            <button type="button" (click)="selectLanguage('en')" class="w-full text-left px-4 py-1.5 hover:bg-blue-800 flex items-center justify-between" [class.text-sky-300]="currentLang() === 'en'">
+              English @if (currentLang() === 'en') { <span>✓</span> }
+            </button>
+            <button type="button" (click)="selectLanguage('hi')" class="w-full text-left px-4 py-1.5 hover:bg-blue-800 flex items-center justify-between" [class.text-sky-300]="currentLang() === 'hi'">
+              हिंदी @if (currentLang() === 'hi') { <span>✓</span> }
+            </button>
+            <button type="button" (click)="selectLanguage('bn')" class="w-full text-left px-4 py-1.5 hover:bg-blue-800 flex items-center justify-between" [class.text-sky-300]="currentLang() === 'bn'">
+              বাংলা @if (currentLang() === 'bn') { <span>✓</span> }
+            </button>
+          </div>
+        }
+      </div>
+
+      <a href="#contact" class="hover:text-sky-300 transition-colors">
+        {{ t().CONTACT_US }}
+      </a>
+    </div>
+  </div>
+
+  <!-- 2. Main Navigation Bar (Royal Blue) -->
+  <div class="bg-blue-900 text-white px-4 md:px-8 py-3 flex justify-between items-center relative border-b border-blue-800/50">
+    <div class="flex items-center space-x-3 cursor-pointer">
+      <img src="assets/images/logo.jpg" alt="Gramin Bank Logo" class="h-10 w-10 bg-white rounded-full p-1 shadow object-cover">
+      <div class="flex flex-col">
+        <span class="text-xl font-extrabold tracking-tight leading-tight">
+          {{ t().BANK_NAME }}
+        </span>
+        <span class="text-[10px] uppercase tracking-widest text-blue-200">
+          {{ t().GOVT_UNDERTAKING }}
+        </span>
+      </div>
+    </div>
+
+    <!-- Desktop Navigation Links -->
+    <nav class="hidden lg:flex items-center space-x-7 font-medium">
+      <a href="#" class="hover:text-sky-300 transition-colors py-1 border-b-2 border-transparent hover:border-sky-300">
+        {{ t().HOME }}
+      </a>
+      <a href="#" class="hover:text-sky-300 transition-colors py-1 border-b-2 border-transparent hover:border-sky-300">
+        {{ t().ACCOUNTS }}
+      </a>
+      <a href="#" class="hover:text-sky-300 transition-colors py-1 border-b-2 border-transparent hover:border-sky-300">
+        {{ t().LOANS }}
+      </a>
+      <a href="#" class="hover:text-sky-300 transition-colors py-1 border-b-2 border-transparent hover:border-sky-300">
+        {{ t().DIGITAL_BANKING }}
+      </a>
+      <a href="#" class="hover:text-sky-300 transition-colors py-1 border-b-2 border-transparent hover:border-sky-300">
+        {{ t().GOVT_SCHEMES }}
+      </a>
+    </nav>
+
+    <!-- Right Side CTA + Mobile Toggle -->
+    <div class="flex items-center space-x-4">
+      <button type="button" class="hidden md:flex items-center bg-white hover:bg-blue-50 text-blue-950 px-5 py-2 rounded-lg font-bold transition-all shadow-md active:scale-95">
+        <svg class="w-4 h-4 mr-2 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path>
+        </svg>
+        {{ t().NET_BANKING }}
+      </button>
+
+      <button
+        type="button"
+        class="lg:hidden p-2 rounded-lg bg-blue-950 hover:bg-blue-800 text-white focus:outline-none transition-colors border border-blue-700"
+        (click)="toggleMenu()">
+        @if (!isMobileMenuOpen()) {
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        } @else {
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        }
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Drawer Overlay -->
+@if (isMobileMenuOpen()) {
+  <div
+    (click)="closeMenu()"
+    class="fixed inset-0 bg-blue-950/70 backdrop-blur-sm z-50 transition-opacity duration-300">
+  </div>
+}
+
+<div
+  [class.translate-x-0]="isMobileMenuOpen()"
+  [class.translate-x-full]="!isMobileMenuOpen()"
+  class="fixed top-0 right-0 h-full w-[85%] max-w-sm bg-blue-950 text-white z-50 shadow-2xl transition-transform duration-300 ease-in-out flex flex-col justify-between overflow-y-auto">
+
+  <div>
+    <div class="flex items-center justify-between p-5 border-b border-blue-800 bg-blue-950">
+      <span class="font-bold text-lg tracking-wide">{{ t().BANK_NAME }}</span>
+      <button type="button" (click)="closeMenu()" class="p-2 rounded-full hover:bg-blue-900 text-gray-300 hover:text-white">
+        ✕
+      </button>
+    </div>
+
+    <!-- Mobile Language Bar -->
+    <div class="p-4 bg-blue-900/40 border-b border-blue-800 flex justify-between items-center text-xs">
+      <span class="text-blue-300 font-medium">{{ t().LANGUAGE }}</span>
+      <div class="flex bg-blue-900 rounded p-1 border border-blue-700">
+        <button type="button" (click)="selectLanguage('en')" class="px-2.5 py-1 rounded transition-colors" [class.bg-white]="currentLang() === 'en'" [class.text-blue-950]="currentLang() === 'en'">EN</button>
+        <button type="button" (click)="selectLanguage('hi')" class="px-2.5 py-1 rounded transition-colors" [class.bg-white]="currentLang() === 'hi'" [class.text-blue-950]="currentLang() === 'hi'">हिंदी</button>
+        <button type="button" (click)="selectLanguage('bn')" class="px-2.5 py-1 rounded transition-colors" [class.bg-white]="currentLang() === 'bn'" [class.text-blue-950]="currentLang() === 'bn'">বাংলা</button>
+      </div>
+    </div>
+
+    <nav class="p-4 space-y-1 font-medium">
+      <a href="#" (click)="closeMenu()" class="block px-4 py-3 rounded-lg hover:bg-blue-900 hover:text-sky-300">
+        {{ t().HOME }}
+      </a>
+      <a href="#" (click)="closeMenu()" class="block px-4 py-3 rounded-lg hover:bg-blue-900 hover:text-sky-300">
+        {{ t().ACCOUNTS }}
+      </a>
+      <a href="#" (click)="closeMenu()" class="block px-4 py-3 rounded-lg hover:bg-blue-900 hover:text-sky-300">
+        {{ t().LOANS }}
+      </a>
+      <a href="#" (click)="closeMenu()" class="block px-4 py-3 rounded-lg hover:bg-blue-900 hover:text-sky-300">
+        {{ t().DIGITAL_BANKING }}
+      </a>
+      <a href="#" (click)="closeMenu()" class="block px-4 py-3 rounded-lg hover:bg-blue-900 hover:text-sky-300">
+        {{ t().GOVT_SCHEMES }}
+      </a>
+    </nav>
+  </div>
+</div>
+<!-- AFTER -->
+<div class="h-[56px] sm:h-[84px]"></div>

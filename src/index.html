@@ -11,3 +11,68 @@
   <app-root></app-root>
 </body>
 </html>
+
+<!--
+
+Designing a Single Page Application (SPA) for a Gramin Bank (Regional Rural Bank) requires balancing modern web performance with extreme accessibility. The user base often includes rural customers, farmers, and MSMEs, so the UI must be intuitive, multilingual, and fast on low-bandwidth networks.
+
+Since modern banking applications rely heavily on secure microservices, structuring these sections as independent, lazy-loaded Angular modules will map cleanly to your backend architecture and keep the initial load time low.
+
+Here is a recommended section breakdown for the main SPA:
+
+## 1. Global Header & Navigation (Fixed)
+
+This needs to be sticky at the top of the SPA for immediate access to critical actions.
+
+* **Language Toggle:** Crucial for regional banks (e.g., English, Hindi, and local state languages).
+* **Search Bar:** For quickly finding forms or schemes.
+* **Internet/Mobile Banking Login:** A highly visible, distinct call-to-action button.
+* **Accessibility Controls:** Text size adjustments and high-contrast modes for visually impaired users.
+
+## 2. Hero Section (Dynamic)
+
+The first view above the fold should communicate trust and current offerings.
+
+* **Banner Carousel:** Highlight key interest rates, new agricultural loan products, or government subsidy deadlines.
+* **Cyber Security Alert:** A permanent or easily dismissible banner warning against sharing OTPs or PINs (a regulatory best practice).
+
+## 3. Core Banking Services (Quick Access)
+
+Use a grid of clear, iconography-driven cards. In an Angular SPA, these should route to separate feature modules.
+
+* **Agricultural & Rural Loans:** Kisan Credit Card (KCC), tractor loans, and crop insurance.
+* **Retail Banking:** Savings/Current accounts, Fixed Deposits, and Recurring Deposits.
+* **MSME Finance:** Mudra loans and small business credit.
+* **Digital Products:** Links to download the bank's mobile app, UPI information, and RuPay card details.
+
+## 4. Financial Inclusion & Government Schemes
+
+Gramin banks are primary drivers of government initiatives. Dedicate a specific section to these so they don't get buried.
+
+* PMJDY (Pradhan Mantri Jan Dhan Yojana)
+* Social Security Schemes (APY, PMJJBY, PMSBY)
+* Direct Benefit Transfer (DBT) information.
+
+## 5. Customer Corner & Support
+
+A streamlined section for user assistance and grievance redressal.
+
+* **Branch & ATM Locator:** An interactive map or searchable list component.
+* **Download Forms:** Account opening, KYC updates, and loan applications in PDF format.
+* **Grievance Redressal:** Online complaint registration form, toll-free helpline numbers, and the banking ombudsman link.
+
+## 6. Corporate & Regulatory (Notices)
+
+Often mandatory for banking websites to display public disclosures.
+
+* **Tenders & Auctions:** For vendors and property auctions (SARFAESI).
+* **Financial Results & Disclosures:** Quarterly reports and balance sheets.
+* **Marquee/Ticker:** A scrolling text bar for urgent updates, holidays, or system maintenance notices.
+
+## 7. Global Footer
+
+The anchor of the site containing secondary links and compliance data.
+
+* **Sitemap & Quick Links.**
+* **Regulatory Links:** RBI guidelines, DICGC insurance cover details, and privacy policies.
+* **Contact Information:** Head office address and official social media handles. -->

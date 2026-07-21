@@ -1,0 +1,11 @@
+{
+  "NAV": {
+    "HOME": "হোম",
+    "ACCOUNTS": "অ্যাকাউন্টস",
+    "LOANS": "ঋণ",
+    "DIGITAL_BANKING": "ডিজিটাল ব্যাংকিং",
+    "GOVT_SCHEMES": "সরকারি প্রকল্প",
+    "NET_BANKING": "নেট ব্যাংকিং",
+    "CONTACT_US": "যোগাযোগ করুন"
+  }
+}

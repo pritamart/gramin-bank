@@ -1,0 +1,11 @@
+{
+  "NAV": {
+    "HOME": "Home",
+    "ACCOUNTS": "Accounts",
+    "LOANS": "Loans",
+    "DIGITAL_BANKING": "Digital Banking",
+    "GOVT_SCHEMES": "Govt Schemes",
+    "NET_BANKING": "Net Banking",
+    "CONTACT_US": "Contact Us"
+  }
+}

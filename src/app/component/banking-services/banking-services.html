@@ -1,0 +1,310 @@
+<section class="py-8 lg:py-12 bg-slate-50 text-slate-800 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Section Header -->
+    <div class="animate-fade-in-up text-center max-w-3xl mx-auto mb-12 lg:mb-16">
+      <span class="inline-block px-3.5 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-900 border border-blue-200 mb-3 shadow-sm">
+        {{ t().SECTION_TAG }}
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-blue-950 tracking-tight mb-4">
+        {{ t().SECTION_TITLE }}
+      </h2>
+      <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+        {{ t().SECTION_SUBTITLE }}
+      </p>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+
+      <!-- Card 1: Savings Accounts -->
+      <div class="animate-fade-in-up delay-100 group bg-white rounded-2xl p-6 lg:p-8 border border-slate-200/80 shadow-sm hover:shadow-2xl hover:border-blue-300 transition-all duration-300 transform hover:-translate-y-2 flex flex-col justify-between">
+        <div>
+          <div class="w-12 h-12 rounded-xl bg-blue-50 group-hover:bg-blue-900 text-blue-800 group-hover:text-white flex items-center justify-center transition-all duration-300 transform group-hover:scale-110 group-hover:rotate-3 mb-6 shadow-sm">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-blue-950 mb-2 group-hover:text-blue-900 transition-colors">
+            {{ t().ACC_TITLE }}
+          </h3>
+          <p class="text-sm text-slate-600 leading-relaxed mb-6">
+            {{ t().ACC_DESC }}
+          </p>
+        </div>
+        <button
+          type="button"
+          (click)="openModal('ACC')"
+          class="inline-flex items-center text-sm font-semibold text-blue-900 hover:text-blue-700 transition-colors cursor-pointer text-left focus:outline-none">
+          <span>{{ t().LEARN_MORE }}</span>
+          <svg class="w-4 h-4 ml-1.5 transform group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Card 2: Loans & Credit Support -->
+      <div class="animate-fade-in-up delay-200 group bg-white rounded-2xl p-6 lg:p-8 border border-slate-200/80 shadow-sm hover:shadow-2xl hover:border-blue-300 transition-all duration-300 transform hover:-translate-y-2 flex flex-col justify-between">
+        <div>
+          <div class="w-12 h-12 rounded-xl bg-blue-50 group-hover:bg-blue-900 text-blue-800 group-hover:text-white flex items-center justify-center transition-all duration-300 transform group-hover:scale-110 group-hover:rotate-3 mb-6 shadow-sm">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-blue-950 mb-2 group-hover:text-blue-900 transition-colors">
+            {{ t().LOAN_TITLE }}
+          </h3>
+          <p class="text-sm text-slate-600 leading-relaxed mb-6">
+            {{ t().LOAN_DESC }}
+          </p>
+        </div>
+        <button
+          type="button"
+          (click)="openModal('LOAN')"
+          class="inline-flex items-center text-sm font-semibold text-blue-900 hover:text-blue-700 transition-colors cursor-pointer text-left focus:outline-none">
+          <span>{{ t().LEARN_MORE }}</span>
+          <svg class="w-4 h-4 ml-1.5 transform group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Card 3: Digital Banking & UPI -->
+      <div class="animate-fade-in-up delay-300 group bg-white rounded-2xl p-6 lg:p-8 border border-slate-200/80 shadow-sm hover:shadow-2xl hover:border-blue-300 transition-all duration-300 transform hover:-translate-y-2 flex flex-col justify-between">
+        <div>
+          <div class="w-12 h-12 rounded-xl bg-blue-50 group-hover:bg-blue-900 text-blue-800 group-hover:text-white flex items-center justify-center transition-all duration-300 transform group-hover:scale-110 group-hover:rotate-3 mb-6 shadow-sm">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-blue-950 mb-2 group-hover:text-blue-900 transition-colors">
+            {{ t().DIGITAL_TITLE }}
+          </h3>
+          <p class="text-sm text-slate-600 leading-relaxed mb-6">
+            {{ t().DIGITAL_DESC }}
+          </p>
+        </div>
+        <button
+          type="button"
+          (click)="openModal('DIGITAL')"
+          class="inline-flex items-center text-sm font-semibold text-blue-900 hover:text-blue-700 transition-colors cursor-pointer text-left focus:outline-none">
+          <span>{{ t().LEARN_MORE }}</span>
+          <svg class="w-4 h-4 ml-1.5 transform group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Card 4: Govt Schemes & Subsidies -->
+      <div class="animate-fade-in-up delay-400 group bg-white rounded-2xl p-6 lg:p-8 border border-slate-200/80 shadow-sm hover:shadow-2xl hover:border-blue-300 transition-all duration-300 transform hover:-translate-y-2 flex flex-col justify-between">
+        <div>
+          <div class="w-12 h-12 rounded-xl bg-blue-50 group-hover:bg-blue-900 text-blue-800 group-hover:text-white flex items-center justify-center transition-all duration-300 transform group-hover:scale-110 group-hover:rotate-3 mb-6 shadow-sm">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5m0 0h5m-5 0V11m0 0h-2m2 0h2m-2 4h-2m2 0h2"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-blue-950 mb-2 group-hover:text-blue-900 transition-colors">
+            {{ t().GOVT_TITLE }}
+          </h3>
+          <p class="text-sm text-slate-600 leading-relaxed mb-6">
+            {{ t().GOVT_DESC }}
+          </p>
+        </div>
+        <button
+          type="button"
+          (click)="openModal('GOVT')"
+          class="inline-flex items-center text-sm font-semibold text-blue-900 hover:text-blue-700 transition-colors cursor-pointer text-left focus:outline-none">
+          <span>{{ t().LEARN_MORE }}</span>
+          <svg class="w-4 h-4 ml-1.5 transform group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Card 5: Fixed Deposits -->
+      <div class="animate-fade-in-up delay-500 group bg-white rounded-2xl p-6 lg:p-8 border border-slate-200/80 shadow-sm hover:shadow-2xl hover:border-blue-300 transition-all duration-300 transform hover:-translate-y-2 flex flex-col justify-between">
+        <div>
+          <div class="w-12 h-12 rounded-xl bg-blue-50 group-hover:bg-blue-900 text-blue-800 group-hover:text-white flex items-center justify-center transition-all duration-300 transform group-hover:scale-110 group-hover:rotate-3 mb-6 shadow-sm">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-blue-950 mb-2 group-hover:text-blue-900 transition-colors">
+            {{ t().FD_TITLE }}
+          </h3>
+          <p class="text-sm text-slate-600 leading-relaxed mb-6">
+            {{ t().FD_DESC }}
+          </p>
+        </div>
+        <button
+          type="button"
+          (click)="openModal('FD')"
+          class="inline-flex items-center text-sm font-semibold text-blue-900 hover:text-blue-700 transition-colors cursor-pointer text-left focus:outline-none">
+          <span>{{ t().LEARN_MORE }}</span>
+          <svg class="w-4 h-4 ml-1.5 transform group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Card 6: ATM & Cards -->
+      <div class="animate-fade-in-up delay-600 group bg-white rounded-2xl p-6 lg:p-8 border border-slate-200/80 shadow-sm hover:shadow-2xl hover:border-blue-300 transition-all duration-300 transform hover:-translate-y-2 flex flex-col justify-between">
+        <div>
+          <div class="w-12 h-12 rounded-xl bg-blue-50 group-hover:bg-blue-900 text-blue-800 group-hover:text-white flex items-center justify-center transition-all duration-300 transform group-hover:scale-110 group-hover:rotate-3 mb-6 shadow-sm">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-blue-950 mb-2 group-hover:text-blue-900 transition-colors">
+            {{ t().ATM_TITLE }}
+          </h3>
+          <p class="text-sm text-slate-600 leading-relaxed mb-6">
+            {{ t().ATM_DESC }}
+          </p>
+        </div>
+        <button
+          type="button"
+          (click)="openModal('ATM')"
+          class="inline-flex items-center text-sm font-semibold text-blue-900 hover:text-blue-700 transition-colors cursor-pointer text-left focus:outline-none">
+          <span>{{ t().LEARN_MORE }}</span>
+          <svg class="w-4 h-4 ml-1.5 transform group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========================================== -->
+<!-- DYNAMIC DIALOG MODAL BOX -->
+<!-- ========================================== -->
+@if (selectedService()) {
+  <!-- Dark Overlay Backdrop -->
+  <div
+    (click)="closeModal()"
+    class="fixed inset-0 bg-blue-950/60 backdrop-blur-sm z-50 transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+
+    <!-- Modal Card Container -->
+    <div
+      (click)="$event.stopPropagation()"
+      class="animate-modal bg-white rounded-2xl max-w-2xl w-full shadow-2xl border border-blue-100 overflow-hidden relative my-auto">
+
+      <!-- Modal Header (Navy Blue) -->
+      <div class="bg-blue-950 text-white p-6 flex justify-between items-center border-b border-blue-900">
+        <div class="flex items-center space-x-3">
+          <div class="w-9 h-9 rounded-lg bg-blue-900/80 flex items-center justify-center text-sky-300">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-white tracking-wide">
+            @if (selectedService() === 'ACC') { {{ t().ACC_TITLE }} }
+            @else if (selectedService() === 'LOAN') { {{ t().LOAN_TITLE }} }
+            @else if (selectedService() === 'DIGITAL') { {{ t().DIGITAL_TITLE }} }
+            @else if (selectedService() === 'GOVT') { {{ t().GOVT_TITLE }} }
+            @else if (selectedService() === 'FD') { {{ t().FD_TITLE }} }
+            @else if (selectedService() === 'ATM') { {{ t().ATM_TITLE }} }
+          </h3>
+        </div>
+
+        <button
+          type="button"
+          (click)="closeModal()"
+          class="text-blue-200 hover:text-white p-1.5 rounded-lg hover:bg-blue-900 transition-colors focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Modal Content Body -->
+      <div class="p-6 sm:p-8 max-h-[75vh] overflow-y-auto space-y-6 text-slate-700">
+
+        <!-- Key Features List -->
+        <div>
+          <h4 class="text-xs uppercase font-extrabold text-blue-900 tracking-wider mb-3">
+            {{ t().KEY_FEATURES }}
+          </h4>
+          <ul class="space-y-2.5">
+            @let details = selectedService() === 'ACC' ? t().ACC_DETAILS :
+                           selectedService() === 'LOAN' ? t().LOAN_DETAILS :
+                           selectedService() === 'DIGITAL' ? t().DIGITAL_DETAILS :
+                           selectedService() === 'GOVT' ? t().GOVT_DETAILS :
+                           selectedService() === 'FD' ? t().FD_DETAILS : t().ATM_DETAILS;
+
+            @for (feature of details.features; track feature) {
+              <li class="flex items-start text-sm sm:text-base text-slate-700">
+                <svg class="w-5 h-5 text-blue-800 mr-2.5 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>{{ feature }}</span>
+              </li>
+            }
+          </ul>
+        </div>
+
+        <!-- Divider -->
+        <hr class="border-slate-100" />
+
+        <!-- Grid: Eligibility & Documents -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <!-- Eligibility -->
+          <div class="bg-blue-50/60 p-4 rounded-xl border border-blue-100">
+            <h4 class="text-xs uppercase font-extrabold text-blue-900 tracking-wider mb-2 flex items-center">
+              <svg class="w-4 h-4 mr-1.5 text-blue-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+              </svg>
+              {{ t().ELIGIBILITY }}
+            </h4>
+            <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+              @if (selectedService() === 'ACC') { {{ t().ACC_DETAILS.eligibility }} }
+              @else if (selectedService() === 'LOAN') { {{ t().LOAN_DETAILS.eligibility }} }
+              @else if (selectedService() === 'DIGITAL') { {{ t().DIGITAL_DETAILS.eligibility }} }
+              @else if (selectedService() === 'GOVT') { {{ t().GOVT_DETAILS.eligibility }} }
+              @else if (selectedService() === 'FD') { {{ t().FD_DETAILS.eligibility }} }
+              @else if (selectedService() === 'ATM') { {{ t().ATM_DETAILS.eligibility }} }
+            </p>
+          </div>
+
+          <!-- Documents -->
+          <div class="bg-blue-50/60 p-4 rounded-xl border border-blue-100">
+            <h4 class="text-xs uppercase font-extrabold text-blue-900 tracking-wider mb-2 flex items-center">
+              <svg class="w-4 h-4 mr-1.5 text-blue-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+              </svg>
+              {{ t().DOCUMENTS }}
+            </h4>
+            <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+              @if (selectedService() === 'ACC') { {{ t().ACC_DETAILS.docs }} }
+              @else if (selectedService() === 'LOAN') { {{ t().LOAN_DETAILS.docs }} }
+              @else if (selectedService() === 'DIGITAL') { {{ t().DIGITAL_DETAILS.docs }} }
+              @else if (selectedService() === 'GOVT') { {{ t().GOVT_DETAILS.docs }} }
+              @else if (selectedService() === 'FD') { {{ t().FD_DETAILS.docs }} }
+              @else if (selectedService() === 'ATM') { {{ t().ATM_DETAILS.docs }} }
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="bg-slate-50 px-6 py-4 border-t border-slate-200 flex flex-col sm:flex-row justify-end space-y-2 sm:space-y-0 sm:space-x-3">
+        <button
+          type="button"
+          (click)="closeModal()"
+          class="w-full sm:w-auto px-5 py-2.5 rounded-xl border border-slate-300 text-slate-700 hover:bg-slate-200 font-semibold text-sm transition-colors text-center focus:outline-none">
+          {{ t().CLOSE }}
+        </button>
+        <button
+          type="button"
+          (click)="closeModal()"
+          class="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-blue-900 hover:bg-blue-950 text-white font-bold text-sm shadow-md transition-all active:scale-95 text-center focus:outline-none">
+          {{ t().APPLY_NOW }}
+        </button>
+      </div>
+
+    </div>
+  </div>
+}

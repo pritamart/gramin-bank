@@ -1,0 +1,11 @@
+{
+  "NAV": {
+    "HOME": "मुख्य पृष्ठ",
+    "ACCOUNTS": "खाते",
+    "LOANS": "ऋण",
+    "DIGITAL_BANKING": "डिजिटल बैंकिंग",
+    "GOVT_SCHEMES": "सरकारी योजनाएं",
+    "NET_BANKING": "नेट बैंकिंग",
+    "CONTACT_US": "संपर्क करें"
+  }
+}
