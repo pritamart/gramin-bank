@@ -16,7 +16,7 @@ const MVV_TRANSLATIONS = {
 
     // Vision
     VISION_TITLE: 'Our Vision',
-    VISION_TEXT: 'To be the most trusted enterprise financial institution, recognized globally for digital innovation, customer-centric excellence, and unwavering integrity.',
+    VISION_TEXT: 'To be the most trusted enterprise financial institution, recognized rural for digital innovation, customer-centric excellence, and unwavering integrity.',
 
     // Values Section
     VALUES_TITLE: 'Core Values',
@@ -93,7 +93,7 @@ const MVV_TRANSLATIONS = {
     MISSION_TEXT: 'নিরাপদ, সহজলভ্য এবং স্কেলযোগ্য আর্থিক সমাধান সরবরাহ করা যা সর্বোচ্চ প্রশাসনিক মান বজায় রেখে ব্যবসা ও ব্যক্তিদের টেকসই অর্থনৈতিক প্রবৃদ্ধি অর্জনে সক্ষম করে।',
 
     VISION_TITLE: 'আমাদের ভিশন',
-    VISION_TEXT: 'ডিজিটাল উদ্ভাবন, গ্রাহক-কেন্দ্রিক উৎকর্ষতা এবং দৃঢ় সততার জন্য বিশ্বব্যাপী স্বীকৃত সর্বাধিক বিশ্বস্ত এন্টারপ্রাইজ আর্থিক প্রতিষ্ঠান হওয়া।',
+    VISION_TEXT: 'ডিজিটাল উদ্ভাবন, গ্রাহক-কেন্দ্রিক উৎকর্ষতা এবং দৃঢ় সততার জন্য গ্রামীণ স্বীকৃত সর্বাধিক বিশ্বস্ত এন্টারপ্রাইজ আর্থিক প্রতিষ্ঠান হওয়া।',
 
     VALUES_TITLE: 'মূল মূল্যবোধ',
     VALUES_SUBTITLE: 'আমাদের বিশ্বব্যাপী ক্রিয়াকলাপ জুড়ে আমাদের নেওয়া প্রতিটি সিদ্ধান্তকে নির্দেশিত করে এমন মৌলিক নীতিসমূহ।',

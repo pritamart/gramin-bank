@@ -8,10 +8,12 @@ import { CustomerCornerSupportComponent } from "./component/customer-corner-supp
 import { CorporateRegulatoryNoticesComponent } from "./component/corporate-regulatory-notices/corporate-regulatory-notices";
 import { GlobalFooterComponent } from "./component/global-footer.component/global-footer.component";
 import { MissionVisionValuesComponent } from "./component/mission-vision-values/mission-vision-values";
+import { SupportBannerComponent } from "./component/support-banner-component/support-banner-component";
+import { CustomerHelpComponent } from "./component/customer-help-component/customer-help-component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, HeroComponent, ServicesComponent, FinancialInclusionComponent, CustomerCornerSupportComponent, CorporateRegulatoryNoticesComponent, GlobalFooterComponent, MissionVisionValuesComponent],
+  imports: [RouterOutlet, HeaderComponent, HeroComponent, ServicesComponent, FinancialInclusionComponent, CustomerCornerSupportComponent, CorporateRegulatoryNoticesComponent, GlobalFooterComponent, MissionVisionValuesComponent, SupportBannerComponent, CustomerHelpComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
