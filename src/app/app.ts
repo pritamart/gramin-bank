@@ -13,7 +13,7 @@ import { CustomerHelpComponent } from "./component/customer-help-component/custo
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, HeroComponent, ServicesComponent, FinancialInclusionComponent, CustomerCornerSupportComponent, CorporateRegulatoryNoticesComponent, GlobalFooterComponent, MissionVisionValuesComponent, SupportBannerComponent, CustomerHelpComponent],
+  imports: [RouterOutlet, HeaderComponent, HeroComponent, ServicesComponent, FinancialInclusionComponent, CustomerCornerSupportComponent, GlobalFooterComponent, MissionVisionValuesComponent, SupportBannerComponent, CustomerHelpComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
