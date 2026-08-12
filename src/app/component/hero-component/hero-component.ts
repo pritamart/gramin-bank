@@ -4,7 +4,7 @@ import { LanguageService } from '../../services/language';
 
 const HERO_TRANSLATIONS = {
   en: {
-    TAG: 'Welcome to Gramin Bank',
+    TAG: 'Welcome to CRB',
     TITLE_1: 'Empowering Rural India With',
     TITLE_HIGHLIGHT: 'Modern Banking Solutions',
     SUBTITLE: 'Experience seamless digital banking, quick loan approvals, and secure savings accounts designed for every citizen.',

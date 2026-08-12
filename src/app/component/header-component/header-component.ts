@@ -7,7 +7,7 @@ const HEADER_TRANSLATIONS = {
     SKIP_CONTENT: 'Skip to main content',
     TEXT_SIZE: 'Text Size',
     CONTACT_US: 'Contact Us',
-    BANK_NAME: 'Gramin Bank',
+    BANK_NAME: 'CRB',
     GOVT_UNDERTAKING: 'A Govt. of India Undertaking',
     HOME: 'Home',
     ACCOUNTS: 'Accounts & Services',
