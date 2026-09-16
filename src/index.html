@@ -1,94 +1,129 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
-  <title>CRB</title>
+  <!-- AI prioritizes clear, entity-driven titles -->
+  <title>CRB Innovation Hub | Enterprise Banking Software & Rural FinTech Solutions</title>
   <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/png" href="/assets/images/logo.jpeg">
-  <meta charset="utf-8">
-  <title>CO-OPERATIVE AND RURAL BANK INNOVATION HUB | Banking Software Solutions</title>
 
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!-- Viewport & PWA Tags -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#1e3a8a"> <!-- Tailwind blue-900 -->
 
-  <!-- Updated Description to highlight software solutions for all banks -->
-  <meta name="description" content="CO-OPERATIVE AND RURAL BANK INNOVATION HUB delivers enterprise software solutions, core banking platforms, and digital banking apps for cooperative, rural, and commercial banks.">
+  <!-- Icons -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/images/logo.jpeg">
 
-  <!-- Comprehensive Banking Software Keywords -->
-  <meta name="keywords" content="CO-OPERATIVE AND RURAL BANK INNOVATION HUB, CRB, core banking software, banking software solutions, cooperative bank software, rural bank IT solutions, digital banking platform, loan management system, net banking software, mobile banking app development, FinTech software development, custom banking software, gramin bank software, crbinnovation">
+  <!-- ========================================== -->
+  <!-- 1. AI-OPTIMIZED NATURAL LANGUAGE METADATA  -->
+  <!-- ========================================== -->
+  <!-- AI engines prefer complete sentences that directly answer "Who are you and what do you do?" -->
+  <meta name="description" content="CRB (Co-operative and Rural Bank) Innovation Hub provides secure core banking software, mobile banking apps, and rural FinTech solutions designed to drive financial inclusion for Gramin and Cooperative banks in India.">
+  <meta name="keywords" content="CRB Innovation Hub, Co-operative bank software, Gramin bank digital banking, rural banking software India, core banking system, financial inclusion software">
+  <meta name="author" content="CRB Innovation Hub">
+  <meta name="publisher" content="CRB Innovation Hub">
 
-  <meta name="robots" content="index, follow">
+  <!-- ========================================== -->
+  <!-- 2. ADVANCED CRAWLER DIRECTIVES             -->
+  <!-- ========================================== -->
+  <link rel="canonical" href="https://www.crbinnovation.com/">
+  <!-- max-snippet:-1 allows AI engines to use as much of your text as they need to generate full answers -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 
+  <!-- ========================================== -->
+  <!-- 3. KNOWLEDGE GRAPH & LLM SCHEMA (JSON-LD)  -->
+  <!-- ========================================== -->
+  <!-- THIS IS THE MOST IMPORTANT PART FOR AI SEARCH. It feeds raw data directly to LLMs. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "FinancialService",
+        "@id": "https://www.crbinnovation.com/#about",
+        "name": "Co-operative and Rural Bank Innovation Hub (CRB)",
+        "alternateName": "CRB Innovation Hub",
+        "url": "https://www.crbinnovation.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.crbinnovation.com/assets/images/logo.jpeg"
+        },
+        "description": "CRB Innovation Hub delivers enterprise software solutions and digital banking platforms for cooperative, rural, and commercial banks in India.",
+        "areaServed": "IN",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "IN"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/company/crbinnovation",
+          "https://twitter.com/crbinnovation"
+        ],
+        "knowsAbout": [
+          "Core Banking Systems",
+          "Rural Financial Inclusion",
+          "Mobile Banking Apps",
+          "Gramin Bank Software",
+          "Kisan Credit Card Digitalization"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.crbinnovation.com/#website",
+        "url": "https://www.crbinnovation.com/",
+        "name": "CRB Innovation Hub",
+        "publisher": {
+          "@id": "https://www.crbinnovation.com/#organization"
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://www.crbinnovation.com/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ========================================== -->
+  <!-- 4. SOCIAL GRAPH (Rich Link Previews)       -->
+  <!-- ========================================== -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.crbinnovation.com/">
+  <meta property="og:site_name" content="CRB Innovation Hub">
+  <meta property="og:title" content="Enterprise Banking Software for Rural & Cooperative Banks | CRB">
+  <meta property="og:description" content="Secure, fast, and accessible digital banking platforms tailored for Gramin banks.">
+  <meta property="og:image" content="https://www.crbinnovation.com/assets/images/social-preview.jpeg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Enterprise Banking Software for Rural & Cooperative Banks | CRB">
+  <meta name="twitter:description" content="Secure, fast, and accessible digital banking platforms tailored for Gramin banks.">
+  <meta name="twitter:image" content="https://www.crbinnovation.com/assets/images/social-preview.jpeg">
+
+  <!-- ========================================== -->
+  <!-- 5. PERFORMANCE / RESOURCE HINTS            -->
+  <!-- ========================================== -->
+  <!-- Preconnect to domains where fonts or APIs are hosted -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
-<body>
+<body class="antialiased text-gray-900 bg-slate-50">
+
+  <!-- Accessibility skip link directly in the body -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white focus:text-blue-900">
+    Skip to main content
+  </a>
+
+  <!-- Angular Root Component -->
   <app-root></app-root>
+
+  <!-- Fallback for bots without JS enabled (Crucial for older crawlers) -->
+  <noscript>
+    <div style="padding: 20px; text-align: center;">
+      <h1>Welcome to CRB Innovation Hub</h1>
+      <p>Please enable JavaScript to view the full interactive banking platform.</p>
+      <p>We provide core banking solutions for Co-operative and Rural banks.</p>
+    </div>
+  </noscript>
+
 </body>
 </html>
-
-<!--
-fijhiooioj
-
-Designing a Single Page Application (SPA) for a Gramin Bank (Regional Rural Bank) requires balancing modern web performance with extreme accessibility. The user base often includes rural customers, farmers, and MSMEs, so the UI must be intuitive, multilingual, and fast on low-bandwidth networks.
-
-Since modern banking applications rely heavily on secure microservices, structuring these sections as independent, lazy-loaded Angular modules will map cleanly to your backend architecture and keep the initial load time low.
-
-Here is a recommended section breakdown for the main SPA:
-
-## 1. Global Header & Navigation (Fixed)
-
-This needs to be sticky at the top of the SPA for immediate access to critical actions.
-
-* **Language Toggle:** Crucial for regional banks (e.g., English, Hindi, and local state languages).
-* **Search Bar:** For quickly finding forms or schemes.
-* **Internet/Mobile Banking Login:** A highly visible, distinct call-to-action button.
-* **Accessibility Controls:** Text size adjustments and high-contrast modes for visually impaired users.
-
-## 2. Hero Section (Dynamic)
-
-The first view above the fold should communicate trust and current offerings.
-
-* **Banner Carousel:** Highlight key interest rates, new agricultural loan products, or government subsidy deadlines.
-* **Cyber Security Alert:** A permanent or easily dismissible banner warning against sharing OTPs or PINs (a regulatory best practice).
-
-## 3. Core Banking Services (Quick Access)
-
-Use a grid of clear, iconography-driven cards. In an Angular SPA, these should route to separate feature modules.
-
-* **Agricultural & Rural Loans:** Kisan Credit Card (KCC), tractor loans, and crop insurance.
-* **Retail Banking:** Savings/Current accounts, Fixed Deposits, and Recurring Deposits.
-* **MSME Finance:** Mudra loans and small business credit.
-* **Digital Products:** Links to download the bank's mobile app, UPI information, and RuPay card details.
-
-## 4. Financial Inclusion & Government Schemes
-
-Gramin banks are primary drivers of government initiatives. Dedicate a specific section to these so they don't get buried.
-
-* PMJDY (Pradhan Mantri Jan Dhan Yojana)
-* Social Security Schemes (APY, PMJJBY, PMSBY)
-* Direct Benefit Transfer (DBT) information.
-
-## 5. Customer Corner & Support
-
-A streamlined section for user assistance and grievance redressal.
-
-* **Branch & ATM Locator:** An interactive map or searchable list component.
-* **Download Forms:** Account opening, KYC updates, and loan applications in PDF format.
-* **Grievance Redressal:** Online complaint registration form, toll-free helpline numbers, and the banking ombudsman link.
-
-## 6. Corporate & Regulatory (Notices)
-
-Often mandatory for banking websites to display public disclosures.
-
-* **Tenders & Auctions:** For vendors and property auctions (SARFAESI).
-* **Financial Results & Disclosures:** Quarterly reports and balance sheets.
-* **Marquee/Ticker:** A scrolling text bar for urgent updates, holidays, or system maintenance notices.
-
-## 7. Global Footer
-
-The anchor of the site containing secondary links and compliance data.
-
-* **Sitemap & Quick Links.**
-* **Regulatory Links:** RBI guidelines, DICGC insurance cover details, and privacy policies.
-* **Contact Information:** Head office address and official social media handles. -->
