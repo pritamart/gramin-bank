@@ -1,51 +1,71 @@
-import { Component, HostListener, signal, computed, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';// Adjust path if needed
+import {
+  Component,
+  HostListener,
+  inject,
+  signal,
+  effect,
+  computed
+} from '@angular/core';
+
+import { CommonModule, DOCUMENT } from '@angular/common';
+import { Meta, Title } from '@angular/platform-browser';
 import { Language, LanguageService } from '../../services/language';
 
-const HEADER_TRANSLATIONS = {
+const SEO_CONTENT: Record<string, { title: string; description: string }> = {
   en: {
-    SKIP_CONTENT: 'Skip to main content',
-    TEXT_SIZE: 'Text Size',
-    CONTACT_US: 'Contact Us',
-    BANK_NAME: 'CRB',
-    GOVT_UNDERTAKING: 'A Govt. of India Undertaking',
-    HOME: 'Home',
-    ACCOUNTS: 'Accounts & Services',
-    LOANS: 'Loans & Credit',
-    DIGITAL_BANKING: 'Digital Services',
-    GOVT_SCHEMES: 'Schemes & Benefits',
-    NET_BANKING: 'Net Banking',
-    LANGUAGE: 'Language'
+    title: 'CRB Gramin Bank | Official Website',
+    description:
+      'Official website of CRB Gramin Bank. Access accounts, loans and digital banking services.'
   },
   hi: {
-    SKIP_CONTENT: 'मुख्य सामग्री पर जाएं',
-    TEXT_SIZE: 'पाठ का आकार',
-    CONTACT_US: 'संपर्क करें',
-    BANK_NAME: 'ग्रामीण बैंक',
-    GOVT_UNDERTAKING: 'भारत सरकार का उपक्रम',
-    HOME: 'मुख्य पृष्ठ',
-    ACCOUNTS: 'खाते और सेवाएँ',
-    LOANS: 'ऋण और क्रेडिट',
-    DIGITAL_BANKING: 'डिजिटल सेवाएँ',
-    GOVT_SCHEMES: 'योजनाएँ और लाभ',
-    NET_BANKING: 'नेट बैंकिंग',
-    LANGUAGE: 'भाषा'
+    title: 'सीआरबी ग्रामीण बैंक | आधिकारिक वेबसाइट',
+    description:
+      'सीआरबी ग्रामीण बैंक की आधिकारिक वेबसाइट। खाते, ऋण और डिजिटल बैंकिंग सेवाओं का लाभ उठाएं।'
+  },
+  bn: {
+    title: 'সিআরবি গ্রামীণ ব্যাংক | অফিসিয়াল ওয়েবসাইট',
+    description:
+      'সিআরবি গ্রামীণ ব্যাংকের অফিসিয়াল ওয়েবসাইট। অ্যাকাউন্ট, ঋণ এবং ডিজিটাল ব্যাংকিং পরিষেবা ব্যবহার করুন।'
+  }
+};
+
+const UI_CONTENT: Record<string, {
+  SKIP_CONTENT: string;
+  TEXT_SIZE: string;
+  LANGUAGE: string;
+  HOME: string;
+  ACCOUNTS: string;
+  LOANS: string;
+  GOVT_SCHEMES: string;
+}> = {
+  en: {
+    SKIP_CONTENT: 'Skip to content',
+    TEXT_SIZE: 'Text size',
+    LANGUAGE: 'Language',
+    HOME: 'Home',
+    ACCOUNTS: 'Accounts',
+    LOANS: 'Loans',
+    GOVT_SCHEMES: 'Government Schemes'
+  },
+  hi: {
+    SKIP_CONTENT: 'सामग्री पर जाएं',
+    TEXT_SIZE: 'टेक्स्ट आकार',
+    LANGUAGE: 'भाषा',
+    HOME: 'होम',
+    ACCOUNTS: 'खाते',
+    LOANS: 'ऋण',
+    GOVT_SCHEMES: 'सरकारी योजनाएं'
   },
   bn: {
     SKIP_CONTENT: 'মূল বিষয়বস্তুতে যান',
-    TEXT_SIZE: 'লেখার আকার',
-    CONTACT_US: 'যোগাযোগ করুন',
-    BANK_NAME: 'গ্রামীণ ব্যাংক',
-    GOVT_UNDERTAKING: 'ভারত সরকার নিবন্ধিত',
+    TEXT_SIZE: 'টেক্সটের আকার',
+    LANGUAGE: 'ভাষা',
     HOME: 'হোম',
-    ACCOUNTS: 'অ্যাকাউন্ট এবং পরিষেবা',
-    LOANS: 'ঋণ ও ক্রেডিট',
-    DIGITAL_BANKING: 'ডিজিটাল পরিষেবা',
-    GOVT_SCHEMES: 'যোজনা ও সুবিধা',
-    NET_BANKING: 'নেট ব্যাংকিং',
-    LANGUAGE: 'ভাষা'
+    ACCOUNTS: 'অ্যাকাউন্ট',
+    LOANS: 'ঋণ',
+    GOVT_SCHEMES: 'সরকারি প্রকল্প'
   }
-} as const;
+};
 
 @Component({
   selector: 'app-header-component',
@@ -55,31 +75,58 @@ const HEADER_TRANSLATIONS = {
   styleUrls: ['./header-component.css']
 })
 export class HeaderComponent {
-  // Inject Shared Service
-  private langService = inject(LanguageService);
+  private readonly langService = inject(LanguageService);
+  private readonly titleService = inject(Title);
+  private readonly metaService = inject(Meta);
+  private readonly document = inject(DOCUMENT);
 
-  // Read current language from service
   currentLang = this.langService.currentLang;
 
-  // Local UI states
-  isMobileMenuOpen = signal<boolean>(false);
-  isLangDropdownOpen = signal<boolean>(false);
-  fontScale = signal<number>(100);
+  isMobileMenuOpen = signal(false);
+  isLangDropdownOpen = signal(false);
+  fontScale = signal(100);
 
-  // Computed translations reactive to global language signal
-  t = computed(() => HEADER_TRANSLATIONS[this.currentLang()]);
+  constructor() {
+    effect(() => {
+      const lang = this.currentLang();
+      const seo = SEO_CONTENT[lang] ?? SEO_CONTENT['en'];
+
+      this.document.documentElement.lang = lang;
+      this.titleService.setTitle(seo.title);
+
+      this.metaService.updateTag({
+        name: 'description',
+        content: seo.description
+      });
+
+      this.metaService.updateTag({
+        name: 'robots',
+        content: 'index, follow'
+      });
+
+      this.metaService.updateTag({
+        property: 'og:title',
+        content: seo.title
+      });
+
+      this.metaService.updateTag({
+        property: 'og:description',
+        content: seo.description
+      });
+    });
+  }
 
   selectLanguage(lang: Language): void {
-    this.langService.setLanguage(lang); // 👈 Updates global state
+    this.langService.setLanguage(lang);
     this.isLangDropdownOpen.set(false);
   }
 
   toggleLangDropdown(): void {
-    this.isLangDropdownOpen.update(prev => !prev);
+    this.isLangDropdownOpen.update(value => !value);
   }
 
   toggleMenu(): void {
-    this.isMobileMenuOpen.update(prev => !prev);
+    this.isMobileMenuOpen.update(value => !value);
   }
 
   closeMenu(): void {
@@ -94,7 +141,8 @@ export class HeaderComponent {
     } else if (action === 'reset') {
       this.fontScale.set(100);
     }
-    document.documentElement.style.fontSize = `${this.fontScale()}%`;
+
+    this.document.documentElement.style.fontSize = `${this.fontScale()}%`;
   }
 
   @HostListener('document:keydown.escape')
@@ -102,4 +150,7 @@ export class HeaderComponent {
     this.closeMenu();
     this.isLangDropdownOpen.set(false);
   }
+
+  readonly t = computed(() =>
+    UI_CONTENT[this.currentLang()] ?? UI_CONTENT['en']);
 }
