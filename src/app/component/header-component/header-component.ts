@@ -13,19 +13,19 @@ import { Language, LanguageService } from '../../services/language';
 
 const SEO_CONTENT: Record<string, { title: string; description: string }> = {
   en: {
-    title: 'CRB Gramin Bank | Official Website',
+    title: 'CRB Innovation Hub | Rural Banking, Accounts & Loans',
     description:
-      'Official website of CRB Gramin Bank. Access accounts, loans and digital banking services.'
+      "Explore CRB Innovation Hub's rural banking services in India, including savings accounts, loans, digital banking, deposits and government schemes."
   },
   hi: {
-    title: 'सीआरबी ग्रामीण बैंक | आधिकारिक वेबसाइट',
+    title: 'सीआरबी इनोवेशन हब | ग्रामीण बैंकिंग सेवाएं',
     description:
-      'सीआरबी ग्रामीण बैंक की आधिकारिक वेबसाइट। खाते, ऋण और डिजिटल बैंकिंग सेवाओं का लाभ उठाएं।'
+      'सीआरबी इनोवेशन हब की ग्रामीण बैंकिंग सेवाएं देखें: बचत खाते, ऋण, डिजिटल बैंकिंग, जमा और सरकारी योजनाएं।'
   },
   bn: {
-    title: 'সিআরবি গ্রামীণ ব্যাংক | অফিসিয়াল ওয়েবসাইট',
+    title: 'সিআরবি ইনোভেশন হাব | গ্রামীণ ব্যাংকিং পরিষেবা',
     description:
-      'সিআরবি গ্রামীণ ব্যাংকের অফিসিয়াল ওয়েবসাইট। অ্যাকাউন্ট, ঋণ এবং ডিজিটাল ব্যাংকিং পরিষেবা ব্যবহার করুন।'
+      'সিআরবি ইনোভেশন হাবের গ্রামীণ ব্যাংকিং পরিষেবা দেখুন: সঞ্চয়ী অ্যাকাউন্ট, ঋণ, ডিজিটাল ব্যাংকিং, আমানত এবং সরকারি প্রকল্প।'
   }
 };
 
@@ -111,6 +111,16 @@ export class HeaderComponent {
 
       this.metaService.updateTag({
         property: 'og:description',
+        content: seo.description
+      });
+
+      this.metaService.updateTag({
+        name: 'twitter:title',
+        content: seo.title
+      });
+
+      this.metaService.updateTag({
+        name: 'twitter:description',
         content: seo.description
       });
     });
