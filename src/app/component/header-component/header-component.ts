@@ -13,7 +13,7 @@ import { Language, LanguageService } from '../../services/language';
 
 const SEO_CONTENT: Record<string, { title: string; description: string }> = {
   en: {
-    title: 'CRB Innovation Hub | Rural Banking, Accounts & Loans',
+    title: 'CRB Innovation Hub',
     description:
       "Explore CRB Innovation Hub's rural banking services in India, including savings accounts, loans, digital banking, deposits and government schemes."
   },
